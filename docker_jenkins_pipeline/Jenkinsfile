@@ -28,9 +28,9 @@ pipeline {
             steps {
                 dir('docker_jenkins_pipeline') {
                     script {
-                        docker.image("${DOCKER_IMAGE}:${env.BUILD_ID}").withRun('-p 8000:8000') { c ->
+                        docker.image("${DOCKER_IMAGE}:${env.BUILD_ID}").inside('-p 8000:8000') { c ->
                             sh 'sleep 5'
-                            sh 'python -m unittest test_app.py'
+                            sh 'python3 -m unittest discover -s . -p "test_app.py"'
                         }
                     }
                 }
