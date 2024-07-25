@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_CREDENTIALS_ID = credentials('docker-cred-id')
+        DOCKER_CREDENTIALS_ID = 'docker-cred-id'
         DOCKER_IMAGE = 'taniajose95/book-api'
         DOCKER_REGISTRY = "${env.DOCKER_REGISTRY}"
     }
