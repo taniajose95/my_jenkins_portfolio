@@ -29,7 +29,8 @@ pipeline {
                 dir('docker_jenkins_pipeline') {
                     script {
                         docker.image("${DOCKER_IMAGE}:${env.BUILD_ID}").inside {
-                            sh 'npm test'
+                            sh 'npm install --only=dev'
+			    sh 'npm test'
                         }
                     }
                 }
