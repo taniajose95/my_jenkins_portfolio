@@ -28,7 +28,7 @@ pipeline {
             steps {
                 dir('docker_jenkins_pipeline') {
                     script {
-                        docker.image("${DOCKER_IMAGE}:${env.BUILD_ID}").inside {
+                        docker.image("${DOCKER_IMAGE}:${env.BUILD_ID}").inside('--user root') {
                             sh 'npm install --only=dev'
 			    sh 'npm test'
                         }
