@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    image: nodejs_docker:latest
+    image: taniajose95/nodejs_docker:latest
     build: .
     ports:
       - "3000:3000"

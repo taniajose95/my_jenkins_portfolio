@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_CREDENTIALS_ID = credentials('docker-cred-id')
-        DOCKER_IMAGE = 'nodejs_docker'
+        DOCKER_IMAGE = 'taniajose95/nodejs_docker:latest'
         DOCKER_REGISTRY = "${env.DOCKER_REGISTRY}"
     }
 
